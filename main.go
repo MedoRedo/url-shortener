@@ -4,10 +4,13 @@ import (
 	"fmt"
 	"net/http"
 	"url-shortener/handler"
+	"url-shortener/storage"
 )
 
 func main() {
 	fmt.Println("Application started ...")
+	// Initialize Redis connection
+	storage.InitRedis()
 
 	mux := http.NewServeMux()
 
